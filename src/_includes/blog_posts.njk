@@ -1,0 +1,31 @@
+{% for post in posts | reverse %}
+<article class="mb-4">
+    <div class="entry-content">
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <div class="text-muted text-small mb-3">{{ post.date | postDate }}</div>
+        <div class="featured-image mb-3">{%- first_image post -%}</div>
+        {%- if post.excerpt -%}
+            <p>{{ post.excerpt }}</p>
+        {%- else -%}
+            <p>{{ post.templateContent.slice(0, 1000) | striptags}}...</p>
+        {%- endif -%}
+        <div class="read-more"><a href="{{ post.url }}" class="link-primary">Read more</a></div>
+    </div>
+</article>
+{% endfor %}
+
+
+<nav aria-label="Blog Navigation">
+  <ul class="pagination">
+    <li class="page-item">
+        {%- if pagination.href.previous -%}
+        <a href="{{ pagination.href.previous }}" class="page-link">Previous</a>
+        {%- endif -%}
+    </li>
+    <li class="page-item">
+        {%- if pagination.href.next -%}
+        <a href="{{ pagination.href.next }}" class="page-link">Next</a>
+        {%- endif -%}
+    </li>
+  </ul>
+</nav>

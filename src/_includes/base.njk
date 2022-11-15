@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or meta.title }} | {{ site.name }}</title>
+
+  {% include "partials/meta.njk" %}
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+</head>
+<body>
+  <a href="#main" class="skip-main">Skip to main content</a>
+  {% include "partials/header.njk" %}
+
+  <div class="container">
+    <div class="row">
+      {% if hideSidebar %}
+        <main id="main" class="col-12">
+          {{ content | safe }}
+        </main>
+      {% else %}
+        <main id="main" class="col-md-8 col-lg-9">
+          {{ content | safe }}
+        </main>
+        <aside class="col-md-4 col-lg-3 border-start">
+          {% include "partials/sidebar.njk" %}
+        </aside>
+      {% endif %}
+    </div>
+  </div>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/app.js"></script>
+
+</body>
+</html>

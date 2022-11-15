@@ -1,0 +1,17 @@
+<header class="pb-3 mb-4 border-bottom">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a href="{{ '/' | url }}" class="navbar-brand text-decoration-none">
+          {{ site.name }}
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          {% include "partials/navigation.njk" %}
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

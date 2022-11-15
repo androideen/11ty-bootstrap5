@@ -1,0 +1,12 @@
+{
+    "name": "11ty Bootstrap 5",
+    "description": "Minimal starter template with Bootstrap 5 for the Eleventy static site generator.",
+    "url": "",
+    "lang": "en",
+    "author": {
+        "name": "Tle Apps",
+        "email": "tlflutter87@gmail.com"
+    },
+    "date": 2022,
+    "copyright": "2022"
+}

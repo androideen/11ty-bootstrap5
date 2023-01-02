@@ -19,7 +19,7 @@ npm init
 
 ## Shortcodes
 
-Get the first image of a post
+Display an image
 
 ```
 {%- image "assets/images/abc.webp", "" %}

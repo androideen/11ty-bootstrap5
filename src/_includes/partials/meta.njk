@@ -1,9 +1,23 @@
-<meta name="description" content="{{ meta.description or page.excerpt }}">
+    <meta name="robots" content="{{ meta.index or 'index' }}, {{ meta.follow or 'follow' }}">
+    <meta name="description" content="{{ meta.description or excerpt }}">
 
-<meta property="og:site_name" content="{{ page.title }}">
-<meta property="og:title" content="{{ meta.title or page.title }}">
-<meta property="og:description" content="{{ meta.description or page.excerpt }}">
-<meta property="og:url" content="{{ page.url }}">
-<meta property="og:locale" content="{{ site.local or meta.locale }}">
+    {# Facebook #}
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ meta.title or title }} | {{ site.name }}">
+    <meta property="og:description" content="{{ meta.description or excerpt }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:locale" content="{{ site.locale or meta.locale }}">
+    {%- if meta.image -%}
+    <meta property="og:image" content="{{ meta.image | url | absoluteUrl(site.baseUrl) }}">
+    {%- endif -%}
 
-<link rel="icon" href="{{ '/assets/favicons/favicon.ico' | url }}">
+    {# Twitter #}
+    <meta name="twitter:card" content="{% if meta.image -%}summary_large_image{% else %}summary{% endif %}">
+    <meta name="twitter:title" content="{{ meta.title or title }} | {{ site.name }}">
+    <meta name="twitter:description" content="{{ meta.description or excerpt }}">
+    {%- if meta.image -%}
+    <meta property="twitter:image" content="{{ meta.image | url | absoluteUrl(site.baseUrl) }}">
+    {%- endif -%}
+
+    <link rel="icon" type="image/x-icon" href="{{ site.favicon }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />

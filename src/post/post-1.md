@@ -1,7 +1,7 @@
 ---
 title: Post 1
 layout: post.njk
-featured_post: true
+featured: true
 post_weight: 1.0
 excerpt: Lorem ipsum dolor sit amet
 date: 2022-11-07

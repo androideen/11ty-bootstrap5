@@ -1,0 +1,4 @@
+https://:YOURPAGE.pages.dev/*
+    Link: <https://YOURSITE.COM/:splat>; rel="canonical"
+    X-Robots-Tag: noindex
+    Refresh: 1; url=https://YOURSITE.COM/:splat
